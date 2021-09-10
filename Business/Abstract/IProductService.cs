@@ -9,13 +9,8 @@ namespace Business.Abstract
     {
         List<Product> GetAll();
 
-        void Update(Product product);
-
-        void Add(Product product);
-
-        void Delete(Product product);
-
         List<Product> GetAllByCategoryId(int categoryId);
 
+        List<Product> GetByUnitPrice(decimal max, decimal min);
     }
 }

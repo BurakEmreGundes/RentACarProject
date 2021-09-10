@@ -11,39 +11,26 @@ namespace Business.Concrete
     {
 
         IProductDal _productDal;
-
+         
         public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
 
         }
 
-        public void Add(Product product)
-        {
-            _productDal.Add(product);
-        }
-
-
-        public void Delete(Product product)
-        {
-            _productDal.Delete(product);
-        }
-
-
         public List<Product> GetAll()
         {
-           return _productDal.getAll();
+           return _productDal.GetAll();
         }
 
         public List<Product> GetAllByCategoryId(int categoryId)
         {
-           return _productDal.GetAllByCategoryId(categoryId);
+           return _productDal.GetAll(p=>p.CategoryId==categoryId);
         }
 
-        public void Update(Product product)
+        public List<Product> GetByUnitPrice(decimal max, decimal min)
         {
-            _productDal.Update(product);
+            return _productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max);
         }
-
     }
 }
