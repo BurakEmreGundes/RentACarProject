@@ -48,17 +48,17 @@ namespace Business.Concrete
 
         public IDataResult<Product> GetById(int id)
         {
-            return _productDal.Get(p => p.ProductId == id);
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == id));
         }
 
         public IDataResult<List<Product>> GetByUnitPrice(decimal max, decimal min)
         {
-            return _productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max));
         }
 
         public IDataResult<List<ProductDetailDto>> GetProductDetails()
         {
-            return _productDal.GetProductDetails();
+            return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails());
         }
     }
 }

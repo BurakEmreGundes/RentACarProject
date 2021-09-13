@@ -7,7 +7,7 @@ using System.Text;
 namespace DataAccess.Concrete.EntityFramework
 {
     // Context: Db tabloları ile proje classlarını bağlamak
-    class NorthwindContext:DbContext
+    public class NorthwindContext:DbContext
     {
 
         // Hangi veri tabanıyla ilişkiliyiz.
