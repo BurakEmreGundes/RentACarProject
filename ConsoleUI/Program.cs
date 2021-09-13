@@ -11,13 +11,13 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            ProductManager productManager = new ProductManager(new EfProductDal());
+            /*ProductManager productManager = new ProductManager(new EfProductDal());
             List<Product> products= productManager.GetAll();
 
             foreach (var product in products)
             {
                 Console.WriteLine(product.ProductName);
-            }
+            }*/
         }
     }
 }
